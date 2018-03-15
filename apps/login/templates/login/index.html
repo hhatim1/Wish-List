@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login and Registeration</title>
+</head>
+
+<body>
+  <fieldset>
+    <h3>Please login here</h3>
+
+    {% for message in messages %}
+    <h3 id="error">{{message}}</h3>
+    {% endfor %}
+
+    <form action="{% url 'login:login' %}" method="post">
+      {% csrf_token %}
+      <tr>
+        <td>
+          <label for="email">Email:</label>
+        </td>
+        <td>
+          <input type="text" name="email">
+        </td>
+        <td id="error">{{result.login_email_error}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password">Password:</label>
+        </td>
+        <td>
+          <input type="password" name="password">
+        </td>
+        <td id="error">{{result.login_password_error}}</td>
+      </tr>
+
+      <br>
+      <p id="error">{{result.login_error}}</p>
+      <br>
+      <input type="submit" value="Login">
+    </form>
+    <br>
+    <h3 id="success">{{name}} {{action}}</h3>
+  </fieldset>
+  <fieldset>
+
+    
+    <h3>Please register here</h3>
+    <form action="{% url 'login:register' %}" method="post">
+      {% csrf_token %}
+      <tr>
+        <td>
+          <label for="name">Name:</label>
+        </td>
+        <td>
+          <input type="text" name="name">
+        </td>
+        <td id="error">{{result.name}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="alias">alias:</label>
+        </td>
+        <td>
+          <input type="text" name="alias">
+        </td>
+        <td id="error">{{result.alias}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="datehired">Datehired:</label>
+        </td>
+        <td>
+          <input type="date" name="datehired">
+        </td>
+        <td id="error">{{result.datehired}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="userName">User Name:</label>
+        </td>
+        <td>
+          <input type="text" name="userName">
+        </td>
+        <td id="error">{{result.userName}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="email">Email:</label>
+        </td>
+        <td>
+          <input type="email" name="email">
+        </td>
+        <td id="error">{{result.email}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="password">Password:</label>
+        </td>
+        <td>
+          <input type="password" name="password">
+        </td>
+        <td id="error">{{result.password}}</td>
+      </tr>
+      <tr>
+        <td>
+          <label for="confirm_pass">Password Confirmation</label>
+        </td>
+        <td>
+          <input type="password" name="confirm_pass">
+        </td>
+        <td id="error">{{result.confirm_pass}}</td>
+      </tr>
+      <input type="submit" value="Please Register">
+    </form>
+  </fieldset>
+</body>
+
+</html>

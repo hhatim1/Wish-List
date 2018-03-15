@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+</head>
+
+<body>
+    <fieldset>
+        <a href="{% url 'wishlist:logout' %}">Logout</a>
+        <h3>{{request.session.user_name}}</h3>
+        <h3>{{request.session.user_email}}</h3>
+        <h3>{{request.session.user_id}}</h3>
+    </fieldset>
+    <fieldset>
+        <legend>My wish list</legend>
+            <table>
+               <thead>
+                   <tr>
+                       <th>Creator: </th>
+                       <th>Item :</th>
+                       <th>Action:</th>
+                   </tr>
+               </thead> 
+               <tbody>
+                   {% for item in my_items %}
+                   <tr>
+                       <td>{{item.created_by.name}}</td>
+                       <td><a href="/wishlist/info/{{item.id}}">{{item.name}}</a></td>
+                       <td><a href="/wishlist/leave/{{item.id}}">Leave</a></td>
+                   </tr>
+                   {% endfor %}
+               </tbody>
+            </table>
+    </fieldset>
+    <h3>Participants & wishlist:</h3>
+    <h3>Hello, {{request.session.userName}}</h3>
+    
+     <fieldset>
+        <legend>Other wish lists</legend>
+            <table>
+               <thead>
+                   <tr>
+                       <th>Creator: </th>
+                       <th>Item :</th>
+                       <th>Action:</th>
+                   </tr>
+               </thead> 
+               <tbody>
+                   {% for item in other_items %}
+                   <tr>
+                       <td>{{item.created_by.name}}</td>
+                       <td><a href="/wishlist/info/{{item.id}}">{{item.name}}</a></td>
+                       <td><a href="/wishlist/join/{{item.id}}">Join</a></td>
+                   </tr>
+                   {% endfor %}
+               </tbody>
+            </table>
+    </fieldset>
+
+    <fieldset>
+        <h3>Create a new wishlist item!</h3>
+       <form action='/wishlist/create_item' method='post' >
+            {% csrf_token %} Item / Product:
+            <input type="text" name="productName" value="">
+            <input type="submit" name="" value="Add">
+        </form>
+    </fieldset>
+    <fieldset>
+        <p>wishlist items:</p>
+        {%for user in product.created_by.all%}
+        <p>{{user.name}}</p>
+        {%endfor%}
+    </fieldset>
+</table>
+</body>
+</html>

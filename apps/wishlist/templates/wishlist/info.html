@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1>Info page for : {{item.name}}</h1>
+	<h3>List of everyone that likes this item:</h3>
+	<ul>
+		{% for user in item.wished_by.all %}
+		<li>{{user.name}}</li>
+		{% endfor %}
+	</ul>
+
+</body>
+</html>
