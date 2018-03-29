@@ -1,6 +1,6 @@
-Project Title: Wish List
+                  Project Title: Wish List
 
-Requirements: 
+Project Requirements: 
 
 1. Login and Registration with validations. Validation errors should appear on the page. Logout as well.
 
@@ -15,20 +15,19 @@ Requirements:
 6. Removal of the items from wishlist table.
    The person who added the product has an option to delete the product.
 
-8. You must be able to deploy your work to Amazon EC2 and provide the IP address or subdomain/domain name to where your work has been deployed. 
-
-Submission Requirement: Your code, exported database file, a text file with the IP address or subdomain/domain name for the deployed work and short video demo link.
-
-Prerequisites
- Required to install: Python / Django. Please 
- run:  python manage.py runserver - in the command line and check the local server to launch the application:  http://localhost:8000/
-
 Deployment:
-The project was deployed in AWS as part of successful completion.
+All work must be deployed to Amazon EC2 and provide the IP address or subdomain/domain name to where your work has been deployed. 
+
+Submission: 
+Code, exported database file, a text file with the IP address or subdomain/domain name for the deployed work and short video demo link.
+
+Prerequisites:
+Required to install: Python / Django. Please 
+run:  python manage.py runserver - in the command line and check the local server to launch the application:  http://localhost:8000/
 
 Author:
 Hatem Abdalla
 
-Licens:
+License:
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
