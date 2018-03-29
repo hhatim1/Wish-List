@@ -1,4 +1,4 @@
-Project Title: Wish Lis
+Project Title: Wish List
 
 Requirements: 
 
@@ -19,19 +19,16 @@ Requirements:
 
 Submission Requirement: Your code, exported database file, a text file with the IP address or subdomain/domain name for the deployed work and short video demo link.
 
-
-
 Prerequisites
  Required to install: Python / Django. Please 
  run:  python manage.py runserver - in the command line and check the local server to launch the application:  http://localhost:8000/
 
-
-Deployment
+Deployment:
 The project was deployed in AWS as part of successful completion.
 
-Author
+Author:
 Hatem Abdalla
 
-License
+Licens:
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
